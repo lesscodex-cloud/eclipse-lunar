@@ -1,0 +1,35 @@
+---
+import MobileNav from './islands/MobileNav';
+import Button from './ui/Button.astro';
+import Container from './ui/Container.astro';
+import { navConfig } from '../config/nav';
+import { siteConfig } from '../config/site';
+---
+<header class="sticky top-0 z-30 border-b border-white/10 bg-surface/80 backdrop-blur-xl">
+  <Container class="flex items-center justify-between py-5">
+    <a class="flex items-center gap-3" href="/" aria-label={`${siteConfig.name} home`}>
+      <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/15 text-xl font-bold text-primary">
+        EL
+      </div>
+      <div class="leading-tight">
+        <p class="text-base font-semibold">{siteConfig.name}</p>
+        <p class="text-sm text-muted">{siteConfig.tagline}</p>
+      </div>
+    </a>
+    <nav class="hidden items-center gap-6 text-sm font-medium text-foreground/90 md:flex" aria-label="Primary">
+      <ul class="flex items-center gap-6">
+        {navConfig.links.map((item) => (
+          <li>
+            <a class="transition hover:text-white" href={item.href}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <Button as="a" intent="primary" size="sm" href={navConfig.cta.href}>
+        {navConfig.cta.label}
+      </Button>
+    </nav>
+    <MobileNav client:idle links={navConfig.links} cta={navConfig.cta} />
+  </Container>
+</header>

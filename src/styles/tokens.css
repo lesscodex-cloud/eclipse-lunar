@@ -1,0 +1,27 @@
+:root {
+  --color-background: #070915;
+  --color-surface: #0e1122;
+  --color-surface-soft: rgba(255, 255, 255, 0.03);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-foreground: #e8eaf6;
+  --color-muted: #c7c9e4;
+  --color-muted-strong: #aab0d9;
+  --color-primary: #6c63ff;
+  --color-primary-strong: #4b45c6;
+  --color-primary-soft: #9c96ff;
+  --color-accent: #5ce1e6;
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  --shadow-soft: 0 20px 120px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 15px 60px rgba(108, 99, 255, 0.3);
+
+  --gradient-page: radial-gradient(circle at 10% 10%, rgba(92, 225, 230, 0.15), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(108, 99, 255, 0.25), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(156, 150, 255, 0.18), transparent 22%),
+    #0a0c1c;
+  --gradient-spotlight: radial-gradient(circle at 20% 20%, rgba(92, 225, 230, 0.16), transparent 40%),
+    radial-gradient(circle at 70% 10%, rgba(108, 99, 255, 0.25), transparent 35%);
+}

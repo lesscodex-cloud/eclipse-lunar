@@ -14,4 +14,11 @@ so you can focus on crafting the experience.
 ## Styling
 
 TailwindCSS powers the design tokens, with global gradients and utility-first classes. Customize
-`tailwind.config.mjs` to align with your brand.
+`tailwind.config.mjs` to align with your brand. Design tokens live in `src/styles/tokens.css`, and reusable
+UI primitives (Button, Badge, Card, Container, Section) are available under `src/components/ui/` to keep
+spacing, radii, and colors consistent across pages.
+
+## Layout configuration
+
+Header and footer content is data-driven from `src/config/nav.ts` and `src/config/site.ts` so you can update
+navigation, calls-to-action, and footer columns without touching component markup.
