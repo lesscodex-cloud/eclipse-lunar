@@ -1,0 +1,25 @@
+---
+import { cva } from 'class-variance-authority';
+
+const badgeStyles = cva('inline-flex items-center gap-2 rounded-full border text-xs font-semibold uppercase tracking-[0.12em]', {
+  variants: {
+    intent: {
+      primary: 'border-primary/40 bg-primary/15 text-primary',
+      accent: 'border-accent/40 bg-accent/15 text-accent',
+      neutral: 'border-white/15 bg-white/5 text-muted',
+      outline: 'border-border/70 bg-surface-soft text-foreground',
+    },
+    size: {
+      sm: 'px-3 py-1',
+      md: 'px-4 py-2 text-[0.72rem] tracking-[0.16em]',
+    },
+  },
+  defaultVariants: {
+    intent: 'neutral',
+    size: 'md',
+  },
+});
+
+const { intent = 'neutral', size = 'md', class: className = '', ...props } = Astro.props;
+---
+<span class={badgeStyles({ intent, size, class: className })} {...props} />

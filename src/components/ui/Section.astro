@@ -1,0 +1,27 @@
+---
+import { cva } from 'class-variance-authority';
+
+const sectionStyles = cva('relative rounded-2xl', {
+  variants: {
+    tone: {
+      canvas: '',
+      frosted: 'border border-border/70 bg-surface-soft shadow-soft backdrop-blur',
+      solid: 'bg-surface shadow-soft',
+    },
+    padding: {
+      none: '',
+      sm: 'p-4',
+      md: 'p-6',
+      lg: 'p-8',
+    },
+  },
+  defaultVariants: {
+    tone: 'frosted',
+    padding: 'md',
+  },
+});
+
+const { as = 'section', tone = 'frosted', padding = 'md', class: className = '', ...props } = Astro.props;
+const Tag = as;
+---
+<Tag class={sectionStyles({ tone, padding, class: className })} {...props} />

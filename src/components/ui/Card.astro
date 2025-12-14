@@ -1,0 +1,26 @@
+---
+import { cva } from 'class-variance-authority';
+
+const cardStyles = cva(
+  'relative overflow-hidden rounded-xl border border-border/70 bg-surface-soft text-foreground shadow-soft backdrop-blur',
+  {
+    variants: {
+      padding: {
+        sm: 'p-4',
+        md: 'p-6',
+        lg: 'p-8',
+      },
+      interactive: {
+        true: 'transition hover:-translate-y-1 hover:shadow-glow',
+      },
+    },
+    defaultVariants: {
+      padding: 'md',
+    },
+  }
+);
+
+const { as = 'div', padding = 'md', interactive = false, class: className = '', ...props } = Astro.props;
+const Tag = as;
+---
+<Tag class={cardStyles({ padding, interactive, class: className })} {...props} />
