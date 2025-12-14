@@ -1,5 +1,9 @@
 ---
-const { title = 'Eclipse Lunar', description = 'SaaS launchpad for modern teams' } = Astro.props;
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { siteConfig } from '../config/site';
+
+const { title = siteConfig.name, description = siteConfig.description } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +17,10 @@ const { title = 'Eclipse Lunar', description = 'SaaS launchpad for modern teams'
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body class="bg-background text-foreground">
+    <Header />
     <main class="min-h-screen">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
