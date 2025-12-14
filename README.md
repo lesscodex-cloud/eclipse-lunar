@@ -1,1 +1,1 @@
-# eclipse-lunar
+# Eclipse Lunar - AstroJS Theme SaaS & Stratups
